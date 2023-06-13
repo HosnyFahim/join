@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo-black.svg">
+    <link rel="stylesheet" href="./css/desktop_template.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <script src="./javaScript/script.js"></script>
+    <script src="./javaScript/navbar.js"></script>
+    <title>header</title>
+</head>
+
+<body>
+
+    <div class="header-line">
+        <div class="logo-img" onclick="goTo('summary.html')">
+            <a><img src="img/logo-black.svg"></a>
+        </div>
+        <span class="kanban-text">Kanban Project Managment Tool</span>
+
+        <div class="headline-img">
+            <a href="help.html"><img src="img/quetionmark.svg"></a>
+            <div onclick="openLogOutContainer()" class="profile-img" id="openLogOutContainer">
+                <span id="profile-init"></span>
+            </div>
+            <div class="logOut-container d-none" id="logOutContainer">
+                <div onclick="deleteSessionUser(), goTo('index.html')" class="logout-element">
+                    Log out
+                </div>
+                <div class="horizon-line display-none"></div>
+                <div onclick="goTo('legal.html')" class="legal-notice-element display-none">
+                    Legal notice
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="header" class="header">
+
+        <div class="headerTop">
+
+            <a onclick="goTo('summary.html')"><img class="headerTop-img" src="img/Capa 1.svg"></a>
+
+            <div class="navbar">
+
+                <div onclick="goTo('summary.html')" id="hover-active1">
+                    <img src="img/summary.svg">
+                    <span>Summary</span>
+                </div>
+                <div onclick="goTo('board.html')" id="hover-active2">
+                    <img src="img/board.svg">
+                    <span>Board</span>
+                </div>
+                <div onclick="goTo('addTask.html')" id="hover-active3">
+                    <img src="img/addTask.svg">
+                    <span>Add Task</span>
+                </div>
+                <div onclick="goTo('contacts.html')" id="hover-active4">
+                    <img src="img/contacts.svg">
+                    <span>Contacts</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div onclick="goTo('legal.html')" id="hover-active9">
+                <img src="img/exclamationMark.svg">
+                <span>Legal notice</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-container display-none">
+        <div onclick="goTo('summary.html')" id="hover-active5" class="mobile-menu">
+            <img src="img/summary.svg">
+            <span>Summary</span>
+        </div>
+        <div onclick="goTo('board.html')" id="hover-active6" class="mobile-menu">
+            <img src="img/board.svg">
+            <span>Board</span>
+        </div>
+        <div onclick="goTo('addTask.html')" id="hover-active7" class="mobile-menu">
+            <img src="img/addTask.svg">
+            <span>Add Task</span>
+        </div>
+        <div onclick="goTo('contacts.html')" id="hover-active8" class="mobile-menu">
+            <img src="img/contacts.svg">
+            <span>Contacts</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

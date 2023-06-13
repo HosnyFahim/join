@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo-black.svg">
+    <title>Join-Summary</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/summary.css">
+    <link rel="stylesheet" href="css/desktop_template.css">
+    <script src="javaScript/mini_backend.js"></script>
+    <script src="javaScript/script.js"></script>
+    <script src="javaScript/login.js"></script>
+    <script src="javaScript/summary.js"></script>
+    <script src="./javaScript/navbar.js"></script>
+</head>
+
+<body onload="checkLoginStatus(), includeHTML(), renderGreetingMessage(), mobileOperator()">
+    
+    <div style="height: 80px;" w3-include-html="templates/desktop_template.html"></div>
+
+    <div class="parentContainer">
+        
+        <div class="headline">
+            <h1>Summary</h1>
+            <div class="headline hlmobile">
+                <div class="hlSeperator"></div>
+                <span class="subheadline">Everything in a nutshell!</span>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="cardContainer">
+
+                <div class="cardContainerRow">
+
+                    <a href="board.html" class="smallCard">
+                        <span id="tasksInBoard" class="cardCounter"></span>
+                        <span class="cardDescription">Tasks in Board</span>
+                    </a>
+
+                    <a href="board.html" class="smallCard">
+                        <span id="tasksInProgress" class="cardCounter"></span>
+                        <span class="cardDescription">Tasks in Progress</span>
+                    </a>
+
+                    <a href="board.html" class="smallCard">
+                        <span id="awaitingFeedback" class="cardCounter"></span>
+                        <span class="cardDescription">Awaiting feedback</span>
+                    </a>
+
+                </div>
+
+                <div class="cardContainerRow">
+
+                    <a href="board.html" class="bigCard">
+                        <div class="bcLeft">
+                            <img class="bcImg" src="img/urgent.svg">
+                            <div class="cardInfo">
+                                <span id="tasksUrgent" class="cardCounter"></span>
+                                <span class="cardDescription">Urgent</span>
+                            </div>
+                        </div>
+                        <div class="bcSeperator"></div>
+                        <div class="bcRigth">
+                            <span id="upcomingDate" class="cardDate">Month Day, Year</span><br>
+                            <span class="cardDescription">Upcoming Deadline</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="cardContainerRow">
+
+                    <a href="board.html" class="middleCard">
+                        <img class="mcImg" src="img/pencil.svg">
+                        <div class="cardInfo">
+                            <span id="tasksInToDo" class="cardCounter"></span>
+                            <span class="cardDescription">To-do</span>
+                        </div>
+                    </a>
+
+                    <a href="board.html" class="middleCard">
+                        <img class="mcImg" src="img/check.svg">
+                        <div class="cardInfo">
+                            <span id="tasksInDone" class="cardCounter"></span>
+                            <span class="cardDescription">Done</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div id="welcome-message" class="welcomeMessage">
+                <div id="greeting-message" class="greeting">Hello</div><br>
+                <div id="greeting-user" class="userName"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

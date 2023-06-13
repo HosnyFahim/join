@@ -1,0 +1,112 @@
+.addTaskPopUp {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #F5F5F5;
+    width: 520px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    z-index: 3;
+    padding-bottom: 40px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+
+.popUpBackgroundContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.bigContainerPopUp {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.TaskFormPopUp {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.create-task-button-popUp {
+    position: fixed;
+    top: 20px;
+    right: 48px;
+}
+
+.task-popUp-back-container {
+    margin-top: 32px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 26px;
+}
+
+.animationFadeInRight {
+    animation: fadeInright 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInright {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+@media(max-width: 760px) {
+    .addTaskPopUp {
+        width: 100%;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .TaskFormPopUp {
+        padding-bottom: 84px;
+    }
+
+    textarea {
+        margin: auto;
+    }
+
+    .input-addTask {
+        margin: auto;
+    }
+
+    .select-field {
+        margin: auto;
+    }
+
+    .list {
+        margin: auto;
+    }
+
+    .prio-buttons {
+        margin: auto;
+    }
+
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="icon" href="img/logo-black.svg">
+    <title>board</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/board.css">
+    <link rel="stylesheet" href="./css/boardMobile.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/addTask.css">
+    <link rel="stylesheet" href="./css/addTask-media.css">
+    <link rel="stylesheet" href="./css/addTask-popUp.css">
+    <link rel="stylesheet" href="./css/boardEditMedia.css">
+    <script src="./javaScript/mini_backend.js"></script>
+    <script src="./javaScript/script.js"></script>
+    <script src="./javaScript/board.js"></script>
+    <script src="./javaScript/boardInfo.js"></script>
+    <script src="./javaScript/boardEdit.js"></script>
+    <script src="./javaScript/mobileBoard.js"></script>
+    <script src="./javaScript/taskPopup.js"></script>
+    <script src="./javaScript/addTask.js"></script>
+    <script src="./javaScript/createTask.js"></script>
+    <script src="./javaScript/editCategoryBoard.js"></script>
+    <script src="./javaScript/navbar.js"></script>
+    <script src="./javaScript/templates.js"></script>
+</head>
+
+<body  id="boardBg" onload="checkLoginStatus(), includeHTML(), loadTasks(), getTaskCatrgories()">
+    <header w3-include-html="templates/desktop_template.html"></header>
+
+
+    <div id="taskInfoContainer" class="taskInfoContainer d-none">
+
+
+    </div>
+    <div id="backgroundCloser" class="backgroundCloser backgroundBlur d-none" onclick="closeMoreInfo()">
+
+
+    </div>
+
+    <div id="boardParent" class="parentContainer">
+
+
+        <div class="boardBg">
+
+
+
+            <div class="headline boardHead">
+                <div class="headerAndMobileSearch">
+                    <h1>Board</h1>
+
+                </div>
+
+
+
+                <div class="boardHeadRightSide">
+                    <div style="display: contents;">
+                        <div class="boardSearchParent">
+                            <input id="boardInput" class="boardSearchBar" type="text" onkeyup="filterTasks()">
+                            <button onclick="filterTasks()" class="searchBtn"><img src="img/search.svg" alt=""></button>
+                        </div>
+
+                        <button onclick="openTaskPopUp(), setDate(), getContacts()" class="BoardAddTaskBtn">
+                            <p class="taskBtnText">Add task </p>
+                            <img src="img/AddSymbol.svg" alt="">
+                        </button>
+
+
+                        <button onclick="openTaskPopUp()" class="boardMobileAddTaskBtn">
+                            <img src="img/addtaskmobile.svg" alt="">
+                        </button>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="boardSearchMobile">
+                <input id="boardInput" class="boardSearchBar" type="text" onkeyup="filterTasks()">
+                <button onclick="filterTasks()" class="searchBtn"><img src="img/search.svg" alt=""></button>
+            </div>
+
+
+
+            <div class="boardLists">
+                <div class="centerLists">
+                    <div class="titelStyle">
+                        <h2>To do</h2>
+                        <img  onclick="openTaskPopUp(), setDate(),changeBoard('todo')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+                    </div>
+                    <div class="singleBoards" ondrop="moveTo('todo'), toggleDragAreas()"
+                        ondragover="allowDrop(event)" id="todo">
+                    </div>
+                </div>
+                <div class="centerLists">
+                    <div class="titelStyle">
+                        <h2>In Progress</h2>
+                        <img onclick="openTaskPopUp(), setDate(),changeBoard('inProgress')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+
+                    </div>
+                    <div class="singleBoards"
+                        ondrop="moveTo('inProgress'), toggleDragAreas()" ondragover="allowDrop(event)" id="inProgress">
+                    </div>
+                </div>
+                <div class="centerLists">
+                    <div class="titelStyle">
+                        <h2>Testing</h2>
+                        <img onclick="openTaskPopUp(), setDate(),changeBoard('testing')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+
+                    </div>
+                    <div class="singleBoards"
+                        ondrop="moveTo('testing'), toggleDragAreas()" ondragover="allowDrop(event)" id="testing">
+                    </div>
+                </div>
+                <div class="centerLists">
+                    <div class="titelStyle">
+                        <h2>Done</h2>
+                        <img onclick="openTaskPopUp(), setDate(),changeBoard('done')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+
+                    </div>
+                    <div class="singleBoards" ondrop="moveTo('done'), toggleDragAreas()"
+                        ondragover="allowDrop(event)" id="done">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="editContainer" class="editBg">
+        </div>
+
+    </div>
+   
+    <div id="moreInfoBg" onclick="closeEditTool()" class="moreInfoBg backgroundBlur d-none"></div>
+    <dialog id="msgBoxAlert" class="msgBox d-none" style="background-color: tomato;"></dialog>
+    <dialog id="msgBox" class="msgBox d-none" onclick=""></dialog>
+    <div onclick="resetFormTaskPopUp(), closeTaskPopUp()" class="popUpBackgroundContainer d-none" id="task-bgr-popUp"> </div>
+    <div class="addTaskPopUp d-none animationFadeInRight" id="task-popUp" w3-include-html="templates/addTask_template.html"></div>
+</body>
+
+</html>

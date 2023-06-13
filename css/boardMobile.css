@@ -1,0 +1,246 @@
+@media (max-width: 1385px) {
+    .boardLists {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .boardLists {
+        overflow: visible;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 25px;
+        height: fit-content;
+        padding-bottom: 100px;
+    }
+
+    .singleBoards {
+        min-height: 250px;
+        width: 100%;
+        flex-direction: row;
+        overflow: auto;
+        border-radius: 20px;
+        column-gap: 10px;
+        align-items: center;
+    }
+
+    .boardTask {
+        min-width: 48%;
+    }
+    .progressBar {
+        
+        width: 99%;
+        
+      }
+
+    .subTaskContainerBoard {
+        width: auto;
+    }
+
+    .boardSearchParent {
+        display: none;
+    }
+
+    .headline {
+        flex-wrap: wrap;
+    }
+
+    .titelStyle {
+        width: auto;
+    }
+
+    .BoardAddTaskBtn {
+        display: none;
+    }
+
+    .boardHeadRightSide {
+        align-items: center;
+        height: 100px;
+        justify-content: space-around;
+        max-width: 700px;
+        box-sizing: border-box;
+
+
+    }
+
+    .create-task-buttons {
+        z-index: 10;
+    }
+
+    .headline h1 {
+        margin: 0 !important;
+    }
+
+    .boardMobileAddTaskBtn {
+        display: block;
+    }
+
+    .boardHead {
+        width: unset;
+        flex: 1;
+        justify-content: space-between;
+        margin-left: 30px;
+        box-sizing: border-box;
+    }
+
+    .taskInfoContainer {
+        position: unset;
+        align-items: unset;
+    }
+
+    .editInfo {
+        border-radius: 0;
+        margin-top: 50px;
+    }
+
+    .moreInfoForm {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 150px;
+    }
+
+    .editTask {
+        display: none;
+    }
+
+    .mobileOpenEdit {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        z-index: 12;
+        display: block !important;
+    }
+
+    .mobileBackToBoard {
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        z-index: 12;
+        display: block !important;
+    }
+
+    .saveEditMobile {
+        position: fixed;
+        bottom: 100px;
+        right: 90px;
+        height: 48px;
+        width: 48px;
+        display: flex !important;
+        gap: 15px;
+        box-sizing: border-box;
+        z-index: 12;
+    }
+
+    .centerButtonElements {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: #2A3647;
+        border-radius: 10px;
+    }
+
+    .boardSearchMobile {
+        background-color: white;
+        width: 251px;
+        align-items: center;
+        height: 51px;
+        border-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.2);
+        margin-left: 30px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        display: flex !important;
+    }
+    
+    .MobileMoveBtns{
+        gap: 7px;
+    }
+
+    .headerAndMobileSearch {
+        width: 253px;
+    }
+
+    .mobile-d-none {
+        display: none !important;
+    }
+
+    .showOnlyMobile {
+        display: block !important;
+    }
+    .showOnlyMobileFlex{
+        display: flex !important;
+    }
+    .boardSearchBar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 470px) {
+    .boardTask {
+        min-width: 100%;
+    }
+    
+}
+
+@media (max-width: 300px) {
+    .boardSearchMobile {
+        max-width: 251px;
+        min-width: none;
+        width: auto;
+
+    }
+    .boardLists {
+        margin-left: 8px;
+    }
+}
+
+
+
+
+@media (max-height: 670px) {
+    .taskInfoContainer {
+        align-items: unset;
+    }
+    .parentContainer {
+        margin-left: 32px !important;
+    }
+    .showOnlyMobileFlex{
+        display: flex !important;
+    }
+
+    .backgroundCloser {
+        display: none;
+    }
+
+    .editInfo {
+        padding-bottom: 100px;
+        width: 100vw;
+        border-radius: 0;
+    }
+    }
+
+.showOnlyMobile {
+    display: none;
+}
+.showOnlyMobileFlex{
+    display: none;
+}
+
+.mobileOpenEdit {
+    display: none;
+}
+
+.mobileBackToBoard {
+    display: none;
+}
+
+.saveEditMobile {
+    display: none;
+}
+
+.boardSearchMobile {
+    display: none;
+}

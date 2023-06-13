@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="icon" href="img/logo-black.svg">
+    <title>Join-Contacts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/desktop_template.css">
+    <link rel="stylesheet" href="css/addTask-popUp.css">
+    <script src="javaScript/mini_backend.js"></script>
+    <script src="javaScript/script.js"></script>
+    <script src="javaScript/contacts.js"></script>
+    <script src="./javaScript/addTask.js"></script>
+    <script src="./javaScript/createTask.js"></script>
+    <script src="./javaScript/templates.js"></script>
+    <script src="./javaScript/navbar.js"></script>
+    <script src="./javaScript/taskPopup.js"></script>
+
+</head>
+
+<body onload="checkLoginStatus(), includeHTML(), loadContactsFromServer(), getContacts(), getTaskCatrgories()">
+
+    <div style="height: 80px;" w3-include-html="templates/desktop_template.html"></div>
+
+
+    <div id="parentContainer" class="parentContainer">
+
+        <button onclick="changeOverlayToNewContact()" id="new-contact-btn" class="newContactBtn">
+            <span>New contact</span>
+            <img src="img/newContact.svg">
+        </button>
+
+        <div id="contact-book" class="contactBook"></div>
+
+
+        <div id="content" class="content">
+            <div id="contact-headline" class="headline">
+                <img src="img/back.svg" id="to-contactbook-btn" onclick="mobileSwitchToContactbook()">
+                <h1>Contacts</h1>
+                <div class="hlSeperator"></div>
+                <span class="subheadline">Better with a team</span>
+            </div>
+            <div id="contact-details" class="contactDetails"></div>
+        </div>
+    </div>
+
+    <div id="page-mask" class="pageMask d-none" onclick="closeOverlay()"></div>
+    <div id="contact-overlay" class="contactOverlay d-none"></div>
+
+    <dialog id="msgBox" class="msgBox d-none"></dialog>
+    <dialog id="msgBoxAlert" class="msgBox d-none" style="background-color: tomato;"></dialog>
+
+    <div onclick="resetFormTaskPopUp(), closeTaskPopUp()" class="popUpBackgroundContainer d-none" id="task-bgr-popUp"> </div>
+    <div class="addTaskPopUp d-none animationFadeInRight" id="task-popUp" w3-include-html="templates/addTask_template.html"></div>
+
+
+</body>
+
+</html>

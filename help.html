@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo-black.svg">
+    <title>Join-Help</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="css/desktop_template.css">
+    <script src="./javaScript/mini_backend.js"></script>
+    <script src="javaScript/script.js"></script>
+    <script src="./javaScript/navbar.js"></script>
+
+</head>
+
+<body onload="checkLoginStatus(), includeHTML()">
+    
+    <div style="height: 80px;" w3-include-html="templates/desktop_template.html"></div>
+
+    <div class="parentContainer">
+        
+        <div class="headline">
+            <h1>Help</h1>
+        </div>
+
+        <div class="content">
+
+            <h2>What is Join?</h2>
+            <span>
+                Join is an example for a Kanban-Board. It is made to help you and your Team organise and structure Projects...
+            </span>
+
+            <h4>What is Kanban?</h4>
+            <span>
+                <em>Kanban</em> comes from the Japanese and means <em>signal card</em>.<br>
+                It is an agile project management method with the use of a classic to-do list.<br>
+                With the help of Kanban, the workflow in projects can be planned, monitored and controlled more optimally.<br>
+                The Kanban-Board represents thereby tasks, responsibilities and expirations within a project clearly.<br>
+                The board is divided into columns with entries for tasks that you can work through in sequence with your project colleagues or employees.
+            </span>
+
+            <h2>How to use it</h2>
+
+            <h4>Summary</h4>
+            <div class="howToStructure">
+                <span class="description">Beside a personal greeting, the Summary gives you an overview about your board.</span>
+            </div>
+            <div class="howToStructure">
+                <span class="description">There you can see upcoming deadlines and some statistics to your tasks.</span>
+            </div>    
+            <div class="howToStructure">
+                <span class="description">By clicking one of the summary cards you directly get to your board.</span>
+            </div>
+
+            <h4>Board</h4>
+            <div class="howToStructure">
+                <span class="description">Here you have the overview over all your tasks.</span>
+            </div>
+            <div class="howToStructure">
+                <span class="description">You can search for a specific task, or change the status one by drag and drop it in another column...</span>
+            </div>    
+            <div class="howToStructure">
+                <span class="description">By clicking on a task you get a detailed view, where you also have the possibility to edit it.</span>
+            </div>
+
+            <h4>Add Task</h4>
+            <div class="howToStructure">
+                <span class="description">To create a new task, fill out the form and click the 'Create Task'-Button.</span>
+            </div>
+            <div class="howToStructure">
+                <span class="description">If your task informations are valid, a new task would be created and displayed in your board.</span>
+            </div>
+
+            <h4>Contacts</h4>
+            <div class="howToStructure">
+                <span class="description">Here, you have the option to create a contactbook for the whole board.</span>
+            </div>
+            <div class="howToStructure">
+                <span class="description">By clicking the 'new contact' button, you can use a form to create a new contact.</span>
+            </div>    
+            <div class="howToStructure">
+                <span class="description">After clicking the 'create contact' button, the contact apears in the contactbook.</span>
+            </div>
+            <div class="howToStructure">
+                <span class="description">Clicking a contact in the contactbook shows a detailed overview, where you also can edit and delete a contact. (each user has their own contacts)</span>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
