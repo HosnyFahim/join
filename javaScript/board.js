@@ -1,4 +1,6 @@
+
 // Board arrays
+
 let boardTasks;
 let filterdTasks = [];
 let currentDraggedElement;
@@ -20,6 +22,8 @@ async function getContactsBoard(i) {
     renderContactsAssigndToBoard(i);
 }
 
+
+
 /**
  * It takes the boardTasks array, converts it to a string, and saves it to the browser's local storage.
  */
@@ -38,6 +42,7 @@ async function loadTasks() {
     renderTodos(boardTasks);
 }
 
+
 /**
  * For each element in the boardTasks array, add a new property called 'id' and set it equal to the
  * index of the element in the array.
@@ -47,6 +52,9 @@ function distributeIDs() {
         boardTasks[i]['id'] = i;
     };
 }
+
+
+// HALLO
 
 /**
  * If the search input is empty, then the filtered tasks are the same as the board tasks. Otherwise,
@@ -70,6 +78,7 @@ function includesSearch(t, search) {
             t.category.toLowerCase().startsWith(search)
 }
 
+
 /**
  * Renders every task on board page"!
  * 
@@ -91,6 +100,8 @@ function renderTodos(tasks) {
         checkIfTaskFinished(boardIndex);
     }
 }
+
+
 
 /**
  * When the user starts dragging an element, set the currentDraggedElement variable to the id of the
@@ -125,6 +136,7 @@ function moveTo(boardCategory) {
     renderTodos(boardTasks);
 }
 
+
 /**
  * When the user clicks the button, toggle the class 'dragBackground' on the four divs.
  */
@@ -134,6 +146,7 @@ function toggleDragAreas() {
     document.getElementById('testing').classList.toggle('dragBackground');
     document.getElementById('done').classList.toggle('dragBackground');
 }
+
 
 /**
  * If the task is in the todo or done board, hide the progress bar. If the task has no subtasks, hide
@@ -169,6 +182,7 @@ function countCheckedSubtasks(i) {
     } else {
         return (boardTasks[i].progressNumber / numberSubtask) * 100
     }
+
 }
 
 /**
@@ -178,6 +192,8 @@ function emptySearch() {
     let search = document.getElementById('boardInput');
     search.value = ""
 }
+
+
 
 /**
  * It takes in a boardIndex and a locationIndex, and then it renders the assigned users for the board
@@ -190,6 +206,7 @@ function renderAssignedUser(boardIndex, locationIndex) {
     const assignedUsersLength = assignedUsers.length;
     const maxUsersToDisplay = 2;
     const element = document.getElementById('assignedUser' + locationIndex);
+
     for (let y = 0; y < assignedUsersLength && y < maxUsersToDisplay; y++) {
         element.innerHTML += generateDisplayedCardUsers(y, assignedUsers);
     }
@@ -199,6 +216,8 @@ function renderAssignedUser(boardIndex, locationIndex) {
     }
 }
 
+
+
 /**
  * It takes the index of the task and the index of the subtask and toggles the status of the subtask.
  * @param i - the index of the task in the boardTasks array
@@ -207,6 +226,7 @@ function renderAssignedUser(boardIndex, locationIndex) {
 function subtaskCheckedBoard(i, y) {
     boardTasks[i].subtasks[y].status = !boardTasks[i].subtasks[y].status;
     }
+
 
 /**
  * If the number of checked subtasks is 100 or the number of subtasks is 0, then the task is finished.
@@ -226,6 +246,7 @@ function checkIfTaskFinished(i) {
  * @param i - the index of the task in the array
  */
 function allowPush(i) {
+    
     if (boardSection == 'done') {
         if (boardTasks[i].progress == true) {
             boardTasks[i].board = "done";

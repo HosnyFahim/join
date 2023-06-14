@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./javaScript/mini_backend.js"></script>
     <script src="./javaScript/script.js"></script>
+    <script src="./javaScript/register.js"></script>
     <script src="./javaScript/navbar.js"></script>
+    <script>
+        setURL('https://hosny-fahim.developerakademie.net/smallest_backend_ever')
+    </script>
     <title>Join-SignUp</title>
 </head>
 
@@ -25,14 +29,15 @@
             <div class="login-container">
                 <div class="login-header">
                     <div class="back-img-container">
-                        <img src="img/back.svg" onclick="goTo('index.html')">
+                        <img src="img/back.svg" onclick="goToLogIn()">
                     </div>
                     <span>Sign Up</span>
                     <div class="horizonal-line"></div>
                 </div>
                 <form onsubmit="addUser(); return false;" class="form-container">
                     <div class="input-img">
-                        <input class="input-login" required placeholder="Name" type="name" id="name"pattern="[a-zA-ZäÄöÖüÜß ]*"><img src="img/user.svg">
+                        <input class="input-login" required placeholder="Name" type="name" id="name"
+                            pattern="[a-zA-ZäÄöÖüÜß ]*"><img src="img/user.svg">
                     </div>
                     <div class="input-img">
                         <input class="input-login" required placeholder="Email" type="email" id="email"><img

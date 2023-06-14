@@ -41,13 +41,17 @@ function closeAndSaveInfo() {
  */
 function renderAssingedUserInfo(i) {
     document.getElementById('assignedUserInfo').innerHTML = '';
+
     if (!boardTasks[i].assignedTo.length) {
         document.getElementById('assignedUserInfo').innerHTML = 'No contacts assigned.';
     } else {
         for (let y = 0; y < boardTasks[i].assignedTo.length; y++) {
+
             document.getElementById('assignedUserInfo').innerHTML += generateAssignedUserInfoBoard(i, y);
         }
     }
+
+
 }
 
 /**
@@ -56,9 +60,11 @@ function renderAssingedUserInfo(i) {
  */
 function renderSubTasksInfo(i) {
     const subTaskContainer = document.getElementById('subTaskContainer');
+
     for (let y = 0; y < boardTasks[i].subtasks.length; y++) {
         const isChecked = boardTasks[i].subtasks[y].status;
         const checkedAttribute = isChecked ? 'checked' : '';
+
         subTaskContainer.innerHTML += generateSubtaskInfoBoard(i, y, checkedAttribute);
     }
 }
@@ -83,32 +89,27 @@ function subtaskCheckedInfo(i) {
 }
 
 /**
- * Depending on the prio it calls a function to change the style of a button element.
+ * It changes the background color of the button and the image filter of the image inside the button.
  * @param i - the index of the task in the array
  */
 function showSelectedBtn(i) {
+    const filterStyle = 'invert(100%) sepia(5%) saturate(0%) hue-rotate(352deg) brightness(1000%) contrast(105%)';
+
     switch (boardTasks[i].prio) {
         case 'urgent':
-            changeUrgencyBtnInfoStyle(boardTasks[i].prio,'#FF3D00');
+            document.getElementById("urgentBoardInfo").style.backgroundColor = "#FF3D00";
+            document.getElementById('urgentBoardInfo-img').style.filter = filterStyle;
             break;
         case 'medium':
-            changeUrgencyBtnInfoStyle(boardTasks[i].prio,'#FFA800');
+            document.getElementById("mediumBoardInfo").style.backgroundColor = "#FFA800";
+            document.getElementById('mediumBoardInfo-img').style.filter = filterStyle;
             break;
         case 'low':
-            changeUrgencyBtnInfoStyle(boardTasks[i].prio,'#8BE644');
+            document.getElementById("lowBoardInfo").style.backgroundColor = "#8BE644";
+            document.getElementById('lowBoardInfo-img').style.filter = filterStyle;
             break;
         default:
             break;
     }
-}
 
-/**
- * It changes the background color of the element and the image filter of the image inside the element.
- * @param {string} urgency - starting string of the id
- * @param {string} color - string for the background color
- */
-function changeUrgencyBtnInfoStyle(urgency, color) {
-    const filter = 'invert(100%) sepia(5%) saturate(0%) hue-rotate(352deg) brightness(1000%) contrast(105%)';
-    document.getElementById(urgency + 'BoardInfo').style.backgroundColor = color;
-    document.getElementById(urgency + 'BoardInfo-img').style.filter = filter;
 }

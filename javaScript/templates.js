@@ -90,7 +90,9 @@ function generateTaskInfoHTML(i) {
 }
 
 function generateTaskHTML(i, boardIndex) {
-    return /*html*/ `<div draggable="true" ondragstart=" toggleDragAreas(), startDragging(${boardTasks[boardIndex]['id']})" class="boardTask">
+
+
+    return /*html*/ `<div draggable="true" ondragstart="startDragging(${boardTasks[boardIndex]['id']})" class="boardTask">
     <div class="categoryContainer">
         <div onclick="openTaskInfo(${boardIndex})" class="categoryTag" style="background-color: ${boardTasks[boardIndex]['categoryColor']}"> ${boardTasks[boardIndex]['category']} </div>
         <div class="MobileMoveBtns showOnlyMobileFlex">
@@ -245,7 +247,7 @@ function generateAssignedContactsHTML(i) {
     document.getElementById('listContactBoard').innerHTML = mergedContacts.map((contact, y) => {
         return /*html*/ `
                 <div class="options-2" onclick="toggleCheckbox('checkboxAssignedToBoard${y + 1}', ${y}, ${i})">
-                    <p data-tooltip="${contact.email}" data-flow="top right" id='addedUser${y + 1}'>${contact.name}</p>
+                    <p id='addedUser${y + 1}'>${contact.name}</p>
                     <input id="checkboxAssignedToBoard${y + 1}"
                         class="checkbox" type="checkbox" ${contact.status ? 'checked' : ''}
                         style="pointer-events: none;"> 

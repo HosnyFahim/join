@@ -5,6 +5,7 @@
  */
 function openTaskPopUp() {
     let board = window.location.pathname == '/board.html';
+    
     document.getElementById('task-popUp').classList.remove('d-none');
     document.getElementById('task-bgr-popUp').classList.remove('d-none');
     if (board) {
@@ -12,15 +13,21 @@ function openTaskPopUp() {
     }
 }
 
+
 /**
  * It adds the class 'd-none' to the element with the id 'task-popUp' and the element with the id
  * 'task-bgr-popUp' and then calls the function 'cancelTask()'.
  */
 function closeTaskPopUp() {
     let board = document.getElementById('boardBg');
+
     document.getElementById('task-popUp').classList.add('d-none');
     document.getElementById('task-bgr-popUp').classList.add('d-none');
-    if (board) document.getElementById('boardBg').classList.remove('noScroll');
+
+    if (board) {
+        document.getElementById('boardBg').classList.remove('noScroll');
+    }
+    
     cancelTask();
 }
 
@@ -32,8 +39,11 @@ function closeTaskPopUp() {
 function getSelectedContact(i,j) {
     let email = orderedContacts[i][j].email;
     let index = contacts.indexOf(contacts.find( u => u.email == email));
-    if(!document.getElementById('checkboxAssignedTo'+ (index + 1)).checked)
+    setTimeout(() => {
+        if(!document.getElementById('checkboxAssignedTo'+ (index + 1)).checked)
         checkClick('checkboxAssignedTo'+ (index + 1), index);
+    }, 1000);
+        
 }
 
 /**

@@ -36,6 +36,7 @@ function setURL(url) {
  * Loads a JSON or JSON Array to the Server
  * payload {JSON | Array} - The payload you want to store
  */
+
 async function loadJSONFromServer() {
     let response = await fetch(BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime()));
     return await response.text();
@@ -48,6 +49,9 @@ function loadJSONFromServerOld() {
         let proxy = determineProxySettings();
         let serverURL = proxy + BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime());
 
+
+
+
         xhttp.open('GET', serverURL);
 
         xhttp.onreadystatechange = function(oEvent) {
@@ -59,10 +63,16 @@ function loadJSONFromServerOld() {
                 }
             }
         };
+
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhttp.send();
+
     });
 }
+
+
+
+
 
 /**
  * Saves a JSON or JSON Array to the Server
@@ -89,6 +99,7 @@ function saveJSONToServer() {
 
     });
 }
+
 
 function determineProxySettings() {
     return '';
